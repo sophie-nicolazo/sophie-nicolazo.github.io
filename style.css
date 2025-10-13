@@ -1,0 +1,19 @@
+p{
+    margin: 0;
+}
+.grid{
+    display: grid;
+    grid-template-columns: auto lfr;
+    gap: 24px;
+}
+
+.annee{
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    color: darkred;
+}
+
+.activite{
+    font-family: Arial, Helvetica, sans-serif;
+
+}
