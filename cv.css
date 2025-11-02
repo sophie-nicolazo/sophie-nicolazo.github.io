@@ -1,0 +1,143 @@
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  margin: 30px;
+  background: #eee;
+}
+
+.header {
+  background-color: white;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.col2 {
+  text-align: right;
+  font-size: 13px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  gap: 40px;
+  padding: 20px;
+  background: #eee;
+}
+
+
+
+.diplome {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 4px;
+  margin-right: 50px;
+}
+
+.diplome h2 {
+  margin: 0 0 18px 0;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+.diplome .exp {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.diplome .exp dt {
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.diplome .exp dt .diplome-date {
+  font-weight: 400;
+  font-size: inherit;
+  color: #333;
+}
+
+
+
+.experience {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.experience h2 {
+  margin: 0 0 18px 0;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+.exp {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 12px 30px;
+  align-items: start;
+}
+
+.exp dt {
+  font-weight: 700;
+  margin: 0;
+  padding-top: 4px;
+}
+
+.exp dd {
+  margin: 0 0 16px 0;
+  line-height: 1.6;
+}
+
+.exp dd ul {
+  margin: 0;
+  padding-left: 1.1em;
+}
+
+
+
+.three-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 2rem auto;
+  width: 90%; /* centre le bloc sur la page */
+  flex-wrap: wrap;
+}
+
+.three-columns .col {
+  flex: 1;
+  min-width: 250px;
+}
+
+.three-columns h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #000;
+  padding-bottom: 0.3rem;
+}
+
+.three-columns ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.5rem;
+}
+
+.three-columns li {
+  margin-bottom: 0.4rem;
+}
+
+.diplome-title {
+  font-weight: 600;
+}
+
+.diplome-date {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.three-columns {
+  grid-column: 1 / -1; /* s’étend sur toute la largeur du grid parent */
+}
