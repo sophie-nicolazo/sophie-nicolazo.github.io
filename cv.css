@@ -1,7 +1,8 @@
 /* ===========================
-   CV - CSS corrigé alignement parfait
+   CV - CSS Alignement Parfait
    =========================== */
 
+/* Box-sizing universel */
 *,
 *::before,
 *::after {
@@ -11,31 +12,29 @@
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
   margin: 0;
-  background: #eee;
+  background: #d1e1d1;
 }
 
-/* ----------- CONTAINER GLOBAL ALIGNÉ ----------- */
-.wrapper {
+/* ===== CONTENEUR GLOBAL ===== */
+.container {
   max-width: 1200px;
   margin: 30px auto;
-  display: flex;
-  flex-direction: column;
-  gap: 20px; /* espace entre header et main */
+  padding: 0 20px;
 }
 
-/* ----------- HEADER ----------- */
+/* ===== HEADER ===== */
 .header {
   background-color: white;
   padding: 20px;
   display: grid;
   grid-template-columns: 70% 30%;
-  gap: 40px;
+  gap: 20px; /* réduit pour alignement avec main */
   border-radius: 4px;
 }
 
 .header h1 {
   margin: 0;
-  font-size: 28px;
+  font-size: 30px;
   letter-spacing: 0.5px;
 }
 
@@ -48,18 +47,25 @@ body {
 
 .col2 {
   text-align: right;
-  font-size: 13px;
-  align-self: center;
+  font-size: 10px;
+  line-height: 10px;
+  margin: 20px;
 }
 
-/* ----------- MAIN ----------- */
-main {
+/* ===== EXPÉRIENCE & DIPLÔMES ===== */
+.top-sections {
   display: grid;
-  grid-template-columns: 70% 30%;
-  gap: 40px;
+  grid-template-columns: 65% 35%; /* réduit la largeur du diplômes */
+  gap: 20px; /* garde l'alignement avec header */
+  margin-top: 20px;
 }
 
-/* ----------- EXPÉRIENCE & DIPLÔMES ----------- */
+.diplome {
+  width: 95%; /* s'assure qu'il remplisse juste sa colonne */
+  max-width: none; /* enlève les contraintes possibles */
+}
+
+
 .experience,
 .diplome {
   background: #f9f9f9;
@@ -97,32 +103,28 @@ main {
   padding-left: 1.1em;
 }
 
-/* ----------- DIPLÔMES ----------- */
+/* Diplômes spécifique */
 .diplome .exp {
-  display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
 }
 
-.diplome .exp dt {
-  font-weight: 700;
-  margin: 0;
-  line-height: 1.4;
+.diplome .exp dt .diplome-title {
+  font-weight: 600;
 }
 
 .diplome .exp dt .diplome-date {
-  font-weight: 400;
-  font-size: inherit;
-  color: #333;
+  font-weight: 400; /* pas de gras */
+  font-size: 0.9rem;
+  color: #555;
 }
 
-/* ----------- TROIS COLONNES ----------- */
+/* ===== TROIS COLONNES ===== */
 .three-columns {
-  grid-column: 1 / -1; /* occupe toute la largeur */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-top: 20px; /* réduit l’espace vertical */
+  gap: 20px; /* réduit pour aligner avec le haut */
+  margin-top: 20px; /* espace vertical cohérent */
 }
 
 .three-columns .col {
@@ -159,28 +161,6 @@ main {
   margin: 0 0 1rem 0;
 }
 
-/* ----------- DÉTAILS GÉNÉRAUX ----------- */
-.diplome-title {
-  font-weight: 600;
-}
-
-.diplome-date {
-  font-size: 0.9rem;
-  color: #555;
-}
-
-/* ----------- RESPONSIVE ----------- */
-@media (max-width: 900px) {
-  .header {
-    grid-template-columns: 1fr;
-    text-align: left;
-  }
-
-  main {
-    grid-template-columns: 1fr;
-  }
-
-  .three-columns {
-    grid-template-columns: 1fr;
-  }
+.three-columns .exp dt .diplome-date {
+  font-weight: 400; /* pas de gras */
 }
