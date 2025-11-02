@@ -1,41 +1,70 @@
+/* ===========================
+   CV - CSS corrigé alignement parfait
+   =========================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  margin: 30px;
+  margin: 0;
   background: #eee;
 }
 
+/* ----------- CONTAINER GLOBAL ALIGNÉ ----------- */
+.wrapper {
+  max-width: 1200px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* espace entre header et main */
+}
+
+/* ----------- HEADER ----------- */
 .header {
   background-color: white;
   padding: 20px;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 70% 30%;
   gap: 40px;
-  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 0.5px;
+}
+
+.subtitle {
+  margin: 6px 0 0 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: #555;
 }
 
 .col2 {
   text-align: right;
   font-size: 13px;
+  align-self: center;
 }
 
-/* ----------- MAIN LAYOUT ----------- */
+/* ----------- MAIN ----------- */
 main {
   display: grid;
-  grid-template-columns: 70% 30%; /* Expérience à gauche, Diplômes à droite */
+  grid-template-columns: 70% 30%;
   gap: 40px;
-  padding: 20px;
-  background: #eee;
-  max-width: 1200px; /* centre le contenu */
-  margin: 0 auto;
 }
 
-/* ----------- SECTIONS EXPÉRIENCE & DIPLÔMES ----------- */
+/* ----------- EXPÉRIENCE & DIPLÔMES ----------- */
 .experience,
 .diplome {
   background: #f9f9f9;
   padding: 20px;
   border-radius: 4px;
-  box-sizing: border-box;
 }
 
 .experience h2,
@@ -87,24 +116,19 @@ main {
   color: #333;
 }
 
-
-/* ----------- TROIS COLONNES (en dessous) ----------- */
+/* ----------- TROIS COLONNES ----------- */
 .three-columns {
-  grid-column: 1 / -1; /* prend toute la largeur sous les deux colonnes */
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-top: 20px;
+  grid-column: 1 / -1; /* occupe toute la largeur */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 20px; /* réduit l’espace vertical */
 }
 
 .three-columns .col {
-  flex: 1;
-  min-width: 250px;
-  background: #f9f9f9; /* même style visuel */
+  background: #f9f9f9;
   padding: 20px;
   border-radius: 4px;
-  box-sizing: border-box;
 }
 
 .three-columns h2 {
@@ -124,25 +148,16 @@ main {
   line-height: 1.5;
 }
 
-.three-columns .col dl dt {
-  margin-bottom: 1rem; /* espace entre les formations */
-  display: block; /* s’assure que chaque diplôme passe bien à la ligne */
-}
-
-/* Forcer les dl de la colonne "FORMATIONS VALIDÉES" à une colonne */
 .three-columns .exp {
   display: grid;
-  grid-template-columns: 1fr; /* une seule colonne */
-  gap: 0.5rem 0; /* espace vertical entre items */
+  grid-template-columns: 1fr;
+  gap: 0.5rem 0;
 }
 
-/* S'assurer que chaque dt occupe sa ligne et ait de l'air */
 .three-columns .exp dt {
   display: block;
   margin: 0 0 1rem 0;
 }
-
-
 
 /* ----------- DÉTAILS GÉNÉRAUX ----------- */
 .diplome-title {
@@ -154,13 +169,18 @@ main {
   color: #555;
 }
 
-/* ----------- RESPONSIVE (facultatif mais utile) ----------- */
+/* ----------- RESPONSIVE ----------- */
 @media (max-width: 900px) {
+  .header {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
   main {
-    grid-template-columns: 1fr; /* Expérience & Diplômes l’un sous l’autre */
+    grid-template-columns: 1fr;
   }
 
   .three-columns {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 }
