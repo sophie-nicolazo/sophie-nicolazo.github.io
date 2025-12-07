@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const images = Array.from(document.querySelectorAll(".grid .item img, .item.large img, .project-intro img"));
+  const images = Array.from(document.querySelectorAll(".grid .item img, .grid-4 .item img, .item.large img, .project-intro img"));
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.querySelector(".lightbox-img");
   const closeBtn = document.querySelector(".lightbox-close");
